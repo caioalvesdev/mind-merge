@@ -1,0 +1,17 @@
+{
+  "index": {
+    "title": "A Ferramenta de IA para",
+    "services": {
+      "chat": "Conversar",
+      "image": "Gerar Imagens",
+      "music": "Gerar Musicas",
+      "code": "Gerar Codigos",
+      "video": "Gerar Videos"
+    },
+    "description" : "Crie conteúdo usando IA 10x mais rápido",
+    "button" : "Comece a gerar gratuitamente",
+    "credit" : "Não é necessário cartão de crédito",
+    "invite" : "Junte-se a melhor ferramenta de IA!",
+    "patterns" : "Confiado pelas equipes mais inovadoras do mundo"
+  }
+}

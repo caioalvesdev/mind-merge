@@ -1,13 +1,20 @@
-import { authMiddleware } from "@clerk/nextjs";
+import { authMiddleware } from '@clerk/nextjs';
 import createMiddleware from 'next-intl/middleware';
-import { i18n } from '@/config/i18n.config';
-
-// export default createMiddleware(i18n);
-
-export default authMiddleware({
-  publicRoutes: ['/', '/api/webhook']
+ 
+const intlMiddleware = createMiddleware({
+  locales: ['en', 'pt'],
+  defaultLocale: 'pt'
 });
-
+ 
+export default authMiddleware({
+  beforeAuth(request) {
+    return intlMiddleware(request);
+  },
+ 
+  // Ensure that locale-specific sign in pages are public
+  publicRoutes: ['/:locale', '/:locale/sign-in', '/:locale/sign-up']
+});
+ 
 export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
+  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)",],
 };

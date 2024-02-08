@@ -1,0 +1,17 @@
+{
+  "index": {
+    "title": "The best AI tool for",
+    "services": {
+      "chat": "Chat",
+      "image": "Image Generation",
+      "music": "Music Generation",
+      "code": "Code Generation",
+      "video": "Video Generation"
+    },
+    "description" : "Create content using AI 10x faster",
+    "button" : "Start Generating For Free",
+    "credit" : "No credit card required",
+    "invite" : "Join a better AI tool!",
+    "patterns" : "Trusted by the world’s most innovative teams"
+  }
+}

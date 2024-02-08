@@ -8,6 +8,8 @@ import { useAuth } from '@clerk/nextjs'
 
 import { cn } from '@/lib/utils'
 import { Button } from '../ui/button'
+import { ThemeToggle } from '../Theme-toggle'
+import { LocaleToggle } from '../Locale-toggle'
 
 
 const font = Montserrat({
@@ -37,7 +39,11 @@ export const LandingNavbar = () => {
         MindMerge
         </h1>
       </Link>
-      <div className='flex items-center gap-x-2'>
+      <div className='flex items-center gap-x-16'>
+        <div className='flex gap-x-3'>
+          <LocaleToggle />
+          <ThemeToggle />
+        </div>
         <Link href={isSignedIn ? '/dashboard' : '/sign-in'}>
           <Button variant="outline" className='rounded-full'>
             {isSignedIn ? 'Dashboard' : 'Sign in'}

@@ -6,7 +6,7 @@ import { ModalProvider } from '@/components/Model-provider'
 import { Toaster } from "@/components/ui/sonner"
 import "./globals.css";
 import { CrispProvider } from "@/components/Crisp-provider";
-import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
+import { ThemeProvider } from "@/components/Theme-provider"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,9 +25,16 @@ export default function RootLayout({
       <html lang="en">
         <CrispProvider />
         <body className={inter.className}>
-          <ModalProvider />
-          {children}
-          <Toaster />
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            
+          >
+            <ModalProvider />
+            {children}
+            <Toaster />
+          </ThemeProvider>
           </body>
       </html>
     </ClerkProvider>
