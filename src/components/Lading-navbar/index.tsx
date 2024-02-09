@@ -35,8 +35,8 @@ export const LandingNavbar = () => {
             src='/brand/brand.png'
           /> */}
         </div>
-        <h1 className={cn('text-3xl font-extrabold text-zinc-900', font.className)} >
-        MindMerge
+        <h1 className={cn('text-3xl font-extrabold text-zinc-900 dark:text-zinc-100', font.className)} >
+          MindMerge
         </h1>
       </Link>
       <div className='flex items-center gap-x-16'>

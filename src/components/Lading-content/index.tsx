@@ -1,16 +1,19 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const Testimonials = [{}];
 
 export const LandingContent = () => {
+  const t = useTranslations('index');
+  
   return (
     <div id="why_us" className="px-10">
-      <div className="bg-white pb-10 sm:pb-20">
+      <div className=" pb-10 sm:pb-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
-          <h2 className="text-center text-lg font-semibold leading-8 text-gray-900">
-            Trusted by the world’s most innovative teams
+          <h2 className="text-center text-lg font-semibold leading-8 dark:text-zinc-100 text-gray-900">
+            {t('patterns')}
           </h2>
 
           <div className="mt-10 overflow-hidden">
