@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner"
 import "./globals.css";
 import { CrispProvider } from "@/components/Crisp-provider";
 import { ThemeProvider } from "@/components/Theme-provider"
+import { NextIntlClientProvider } from 'next-intl'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,19 +16,26 @@ export const metadata: Metadata = {
   description: "Ai plataform",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface IRootLayoutProps {
   children: React.ReactNode;
-}>) {
+  params: { locale: string };
+}
+
+
+export default async function RootLayout({
+  children,
+  params: { locale },
+}: Readonly<IRootLayoutProps>) {
+  let messages = (await import(`../../../messages/${locale}.json`)).default
   return (
-    <ClerkProvider localization={ptBR}>
+    <ClerkProvider localization={locale === 'pt' ? ptBR : undefined}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
       <html lang="en">
         <CrispProvider />
         <body className={inter.className}>
         <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             
           >
@@ -37,6 +45,7 @@ export default function RootLayout({
           </ThemeProvider>
           </body>
       </html>
+      </NextIntlClientProvider>
     </ClerkProvider>
   );
 }
