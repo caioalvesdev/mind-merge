@@ -23,8 +23,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardFooter } from "@/components/ui/card";
 import Image from "next/image";
 import { useProModal } from "@/hooks/use-pro-model";
+import { useTranslations } from "next-intl";
 
 export default function ImagePage() {
+  const t = useTranslations('dashboard');
   const proModal = useProModal()
   const router = useRouter();
   const [images ,setImages] = useState<string[]>([])
@@ -72,8 +74,8 @@ export default function ImagePage() {
   return (
     <div>
       <Heading
-        title="Image Generation"
-        description="Turn your prompt into an image."
+        title={t('services.image')}
+        description={t('descriptions.image')}
         icon={ImageIcon}
         iconColor="text-pink-700"
         bgColog="bg-pink-700/10"
@@ -93,7 +95,7 @@ export default function ImagePage() {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="A picture of a horse in Swiss alps"
+                        placeholder={t('prompts.image')}
                         {...field}
                       />
                     </FormControl>
@@ -161,7 +163,7 @@ export default function ImagePage() {
                 className="col-span-12 lg:col-span-2 w-full"
                 disabled={isLoading}
               >
-                Generate
+                {t('button')}
               </Button>
             </form>
           </Form>
@@ -173,7 +175,7 @@ export default function ImagePage() {
             </div>
           )}
           {images.length === 0 && !isLoading && (
-            <Empty label="No images generated" />
+            <Empty label={t('empty.image')} />
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8">
               {images.map((src) => (

@@ -20,10 +20,11 @@ export const checkSubscription = async () => {
       stripePriceId: true
     }
   })
-
+  
   if (!userSubscription) {
     return false
   }
+
 
   const isValid = 
     userSubscription.stripePriceId && 

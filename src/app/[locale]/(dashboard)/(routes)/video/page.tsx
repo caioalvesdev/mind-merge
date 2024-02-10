@@ -16,8 +16,10 @@ import { useState } from "react";
 import { Empty } from "@/components/Empty";
 import { Loader } from "@/components/Loader";
 import { useProModal } from "@/hooks/use-pro-model";
+import { useTranslations } from "next-intl";
 
 export default function VideoPage() {
+  const t = useTranslations('dashboard');
   const proModal = useProModal()
   const router = useRouter();
   const [video, setVideo] = useState<string>();
@@ -61,8 +63,8 @@ export default function VideoPage() {
   return (
     <div>
       <Heading
-        title="Video Generation"
-        description="Turn your prompt into video"
+        title={t('services.video')}
+        description={t('descriptions.video')}
         icon={VideoIcon}
         iconColor="text-orange-700"
         bgColog="bg-orange-700/10"
@@ -82,7 +84,7 @@ export default function VideoPage() {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="Clown fish swimming around a coral reef"
+                        placeholder={t('prompts.video')}
                         {...field}
                       />
                     </FormControl>
@@ -93,7 +95,7 @@ export default function VideoPage() {
                 className="col-span-12 lg:col-span-2 w-full"
                 disabled={isLoading}
               >
-                Generate
+                {t('button')}
               </Button>
             </form>
           </Form>
@@ -105,7 +107,7 @@ export default function VideoPage() {
             </div>
           )}
           {!video && !isLoading && (
-            <Empty label="No video generated" />
+            <Empty label={t('empty.video')} />
           )}
          {video && (
           <video controls className="w-full aspect-video mt-8 rounded-lg border bg-black">

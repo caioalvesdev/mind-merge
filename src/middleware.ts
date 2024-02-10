@@ -12,7 +12,7 @@ export default authMiddleware({
   },
  
   // Ensure that locale-specific sign in pages are public
-  publicRoutes: ['/:locale', '/:locale/sign-in', '/:locale/sign-up']
+  publicRoutes: ['/:locale', '/:locale/sign-in', '/:locale/sign-up', 'api/webhook']
 });
  
 export const config = {

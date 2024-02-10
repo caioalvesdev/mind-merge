@@ -6,12 +6,51 @@
       "image": "Image Generation",
       "music": "Music Generation",
       "code": "Code Generation",
-      "video": "Video Generation"
+      "video": "Video Generation",
+      "graphic": "Graphic Generation"
     },
     "description" : "Create content using AI 10x faster",
     "button" : "Start Generating For Free",
     "credit" : "No credit card required",
     "invite" : "Join a better AI tool!",
     "patterns" : "Trusted by the world’s most innovative teams"
+  },
+  "dashboard" : {
+    "title" : "Explore the power of AI",
+    "description" : "Chat with the smartest AI - Experience the power of AI",
+    "services": {
+      "chat": "Chat",
+      "image": "Image Generation",
+      "music": "Music Generation",
+      "code": "Code Generation",
+      "video": "Video Generation",
+      "graphic": "Graphic Generation",
+      "settings": "Settings"
+    },
+    "descriptions": {
+      "chat": "Our most advanced conversation model.",
+      "image": "Turn your prompt into an image.",
+      "video": "Turn your prompt into video",
+      "music": "Turn your prompt into music",
+      "code": "Generate code using descriptive text",
+      "settings": "Manage account settings"
+    },
+    "prompts" : {
+      "chat": "How do I calculate the radius of a circle?",
+      "image": "A picture of a horse in Swiss alps",
+      "video": "Clown fish swimming around a coral reef",
+      "music": "Piano solo",
+      "code": "Generate code using descriptive text",
+      "settings": "Manage account settings"
+    },
+    "empty" : {
+      "chat": "No conversation started",
+      "image": "No image generated",
+      "video": "No video generated",
+      "music": "No music generated",
+      "code": "Simple toggle button using react hooks."
+    },
+    "button" : "Generate",
+    "input" : "Photo"
   }
 }

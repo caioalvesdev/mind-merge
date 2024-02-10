@@ -11,7 +11,6 @@ const openai  = new OpenAI({
 
 export async function POST(req: Request ) {
   try {
-    console.warn('process.env.OPENAI_API_KEY')
     const { userId } = auth()
     const body = await req.json()
     const { prompt, amount = 1, resolution = '1024x1024' } = body    
@@ -44,7 +43,7 @@ export async function POST(req: Request ) {
 
 
     const response = await openai.images.generate({
-      model: "dall-e-2",
+      model: "dall-e-3",
       prompt,
       n: parseInt(amount, 10),
       size: resolution,

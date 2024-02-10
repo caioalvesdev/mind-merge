@@ -1,5 +1,6 @@
+import { useTranslations } from 'next-intl';
 import { z } from 'zod'
-
+// const t = useTranslations('dashboard');
 export const formSchema = z.object({
   prompt : z.string().min(1, {
     message: "Image Prompt é obrigátorio"

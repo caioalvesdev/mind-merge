@@ -1,5 +1,4 @@
-"use client"
-
+'use client'
 import * as React from "react"
 import { Moon, Sun, Languages } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -11,10 +10,31 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname  } from "next/navigation"
+
+interface ILocale {
+  name: string
+  value: string
+}
 
 export const LocaleToggle = () => {
+  const pathname = usePathname()
   const router = useRouter()
+  const locales: ILocale[] = [
+    {
+      name: 'Português',
+      value: 'pt',
+    },
+    {
+      name: 'Inglês',
+      value: 'en',
+    }
+  ]
+
+  const handleChange = ({ value, name}: ILocale) => {
+    const replace = pathname.replace(/^\/(en|pt)\//, '/')
+    router.push(`/${value}${replace}`)
+  }
 
   return (
     <DropdownMenu>
@@ -26,12 +46,11 @@ export const LocaleToggle = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => router.replace('/pt')}>
-          Português
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => router.replace('/en')}>
-          Inglês
-        </DropdownMenuItem>
+        {locales.map(locale => (
+          <DropdownMenuItem key={locale.name} onClick={() => handleChange(locale)}>
+            {locale.name}
+          </DropdownMenuItem>  
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   )

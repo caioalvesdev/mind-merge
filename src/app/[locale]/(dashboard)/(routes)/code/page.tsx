@@ -20,8 +20,10 @@ import { UserAvatar } from "@/components/User-avatar";
 import { BotAvatar } from "@/components/Bot-avatar";
 import ReactMarkdown from 'react-markdown'
 import { useProModal } from "@/hooks/use-pro-model";
+import { useTranslations } from "next-intl";
 
 export default function CodePage() {
+  const t = useTranslations('dashboard');
   const proModal = useProModal()
   const router = useRouter();
   const [messages, setMessages] = useState<OpenAI.Chat.ChatCompletionMessage[]>([]);
@@ -77,8 +79,8 @@ export default function CodePage() {
   return (
     <div>
       <Heading
-        title="Code Generation"
-        description="Generate code using descritive text"
+        title={t('services.code')}
+        description={t('descriptions.code')}
         icon={Code}
         iconColor="text-green-700"
         bgColog="bg-green-700/10"
@@ -98,7 +100,7 @@ export default function CodePage() {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="Simple toggle button using react hooks."
+                        placeholder={t('prompts.code')}
                         {...field}
                       />
                     </FormControl>
@@ -109,7 +111,7 @@ export default function CodePage() {
                 className="col-span-12 lg:col-span-2 w-full"
                 disabled={isLoading}
               >
-                Generate
+                {t('button')}
               </Button>
             </form>
           </Form>
@@ -121,7 +123,7 @@ export default function CodePage() {
             </div>
           )}
           { messages.length === 0 && !isLoading && (
-            <Empty label="No conversation started" />
+            <Empty label={t('empty.chat')} />
           )}
           <div className="flex flex-col-reverse gap-y-4">
               {messages.map((message) => (

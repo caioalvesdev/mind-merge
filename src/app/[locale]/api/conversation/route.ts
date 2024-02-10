@@ -11,7 +11,6 @@ const openai  = new OpenAI({
 
 export async function POST(req: Request ) {
   try {
-    console.warn('process.env.OPENAI_API_KEY')
     const { userId } = auth()
     const body = await req.json()
     const { messages } = body    

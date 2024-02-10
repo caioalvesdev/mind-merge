@@ -6,12 +6,52 @@
       "image": "Gerar Imagens",
       "music": "Gerar Musicas",
       "code": "Gerar Codigos",
-      "video": "Gerar Videos"
+      "video": "Gerar Videos",
+      "graphic": "Gerar Gráfico"
     },
     "description" : "Crie conteúdo usando IA 10x mais rápido",
     "button" : "Comece a gerar gratuitamente",
     "credit" : "Não é necessário cartão de crédito",
     "invite" : "Junte-se a melhor ferramenta de IA!",
     "patterns" : "Confiado pelas equipes mais inovadoras do mundo"
+  },
+  "dashboard" : {
+    "title" : "Explore o poder da IA",
+    "description" : "Converse com a IA mais inteligente - Experimente o poder da IA",
+    "services": {
+      "chat": "Conversar",
+      "image": "Gerar Imagens",
+      "video": "Gerar Videos",
+      "music": "Gerar Musicas",
+      "code": "Gerar Codigos",
+      "graphic": "Gerar Gráfico",
+      "settings": "Configurações"
+    },
+    "descriptions": {
+      "chat": "Nosso modelo de conversação mais avançado.",
+      "image": "Transforme seu prompt em uma imagem.",
+      "video": "Transforme seu prompt em vídeo",
+      "music": "Transforme seu prompt em música",
+      "code": "Gere código usando texto descritivo",
+      "settings": "Gerenciar configurações da conta"
+    },
+    "prompts" : {
+      "chat": "Como calculo o raio de um círculo?",
+      "image": "Uma foto de um cavalo nos Alpes Suíços",
+      "video": "Peixe-palhaço nadando em torno de um recife de coral",
+      "music": "Solo de Piano",
+      "code": "Botão de toggle simples usando react hooks.",
+      "settings": "Gerenciar configurações da conta"
+    },
+    "empty" : {
+      "chat": "Nenhuma conversa foi iniciada",
+      "image": "Nenhuma imagem gerada",
+      "video": "Nenhum vídeo gerado",
+      "music": "Nenhuma musica gerada",
+      "code": "Nenhuma conversa foi iniciada",
+      "settings": "Gerenciar configurações da conta"
+    },
+    "button" : "Gerar",
+    "input" : "Foto"
   }
 }

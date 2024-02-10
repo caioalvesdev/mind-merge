@@ -16,8 +16,10 @@ import { useState } from "react";
 import { Empty } from "@/components/Empty";
 import { Loader } from "@/components/Loader";
 import { useProModal } from "@/hooks/use-pro-model";
+import { useTranslations } from "next-intl";
 
 export default function MusicPage() {
+  const t = useTranslations('dashboard');
   const proModal = useProModal()
   const router = useRouter();
   const [music, setMusic] = useState<string>();
@@ -61,8 +63,8 @@ export default function MusicPage() {
   return (
     <div>
       <Heading
-        title="Music Generation"
-        description="Turn your prompt into music"
+        title={t('services.music')}
+        description={t('descriptions.music')}
         icon={Music}
         iconColor="text-emerald-500"
         bgColog="bg-emerald-500/10"
@@ -82,7 +84,7 @@ export default function MusicPage() {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="Piano solo"
+                        placeholder={t('prompts.music')}
                         {...field}
                       />
                     </FormControl>
@@ -93,7 +95,7 @@ export default function MusicPage() {
                 className="col-span-12 lg:col-span-2 w-full"
                 disabled={isLoading}
               >
-                Generate
+                {t('button')}
               </Button>
             </form>
           </Form>
@@ -105,7 +107,7 @@ export default function MusicPage() {
             </div>
           )}
           {!music && !isLoading && (
-            <Empty label="No music generated" />
+            <Empty label={t('empty.music')} />
           )}
          {music && (
           <audio controls className="w-full mt-8">

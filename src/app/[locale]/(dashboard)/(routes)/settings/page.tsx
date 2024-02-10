@@ -2,8 +2,11 @@ import { Heading } from "@/components/Heading";
 import { SubscriptionButton } from "@/components/Subscription-button";
 import { checkSubscription } from "@/lib/subscription";
 import { Settings } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default async function SettingsPage() {
+  // 'use server'
+  // const t = useTranslations('dashboard');
   const isPro = await checkSubscription()
 
   return (

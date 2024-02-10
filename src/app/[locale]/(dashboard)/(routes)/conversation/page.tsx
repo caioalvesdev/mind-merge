@@ -20,8 +20,10 @@ import { cn } from "@/lib/utils";
 import { UserAvatar } from "@/components/User-avatar";
 import { BotAvatar } from "@/components/Bot-avatar";
 import { useProModal } from "@/hooks/use-pro-model";
+import { useTranslations } from "next-intl";
 
 export default function ConversationPage() {
+  const t = useTranslations('dashboard');
   const proModal = useProModal()
   const router = useRouter();
   const [messages, setMessages] = useState<OpenAI.Chat.ChatCompletionMessage[]>([]);
@@ -76,8 +78,8 @@ export default function ConversationPage() {
   return (
     <div>
       <Heading
-        title="Conversation"
-        description="Our most advanced conversation model."
+        title={t('services.chat')}
+        description={t('descriptions.chat')}
         icon={MessageSquare}
         iconColor="text-violet-500"
         bgColog="bg-violet-500/10"
@@ -97,7 +99,7 @@ export default function ConversationPage() {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="How do I calculate the radius of a circle?"
+                        placeholder={t('prompts.chat')}
                         {...field}
                       />
                     </FormControl>
@@ -108,7 +110,7 @@ export default function ConversationPage() {
                 className="col-span-12 lg:col-span-2 w-full"
                 disabled={isLoading}
               >
-                Generate
+                {t('button')}
               </Button>
             </form>
           </Form>
@@ -120,7 +122,7 @@ export default function ConversationPage() {
             </div>
           )}
           { messages.length === 0 && !isLoading && (
-            <Empty label="No conversation started" />
+            <Empty label={t('empty.chat')} />
           )}
           <div className="flex flex-col-reverse gap-y-4">
               {messages.map((message) => (
