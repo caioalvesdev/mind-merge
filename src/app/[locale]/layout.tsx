@@ -8,6 +8,7 @@ import "./globals.css";
 import { CrispProvider } from "@/components/Crisp-provider";
 import { ThemeProvider } from "@/components/Theme-provider"
 import { NextIntlClientProvider } from 'next-intl'
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,6 +32,9 @@ export default async function RootLayout({
     <ClerkProvider localization={locale === 'pt' ? ptBR : undefined}>
       <NextIntlClientProvider locale={locale} messages={messages}>
       <html lang="pt-BR">
+        <Head>
+          <link rel="icon" href="/brand/brand.png" />
+        </Head>
         <CrispProvider />
         <body className={inter.className}>
         <ThemeProvider
