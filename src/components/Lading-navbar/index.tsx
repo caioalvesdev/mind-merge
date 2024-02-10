@@ -35,12 +35,12 @@ export const LandingNavbar = () => {
             src='/brand/brand.png'
           /> */}
         </div>
-        <h1 className={cn('text-3xl font-extrabold text-zinc-900 dark:text-zinc-100', font.className)} >
+        <h1 className={cn('text-2xl lg:text-3xl font-extrabold text-zinc-900 dark:text-zinc-100', font.className)} >
           MindMerge
         </h1>
       </Link>
-      <div className='flex items-center gap-x-16'>
-        <div className='flex gap-x-3'>
+      <div className='flex items-center flex-col sm:flex-row gap-1 sm:gap-x-14 lg:gap-x-16'>
+        <div className='flex gap-x-1 sm:gap-x-2 lg:gap-x-3'>
           <LocaleToggle />
           <ThemeToggle />
         </div>
