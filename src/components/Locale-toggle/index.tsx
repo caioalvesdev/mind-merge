@@ -31,8 +31,13 @@ export const LocaleToggle = () => {
     }
   ]
 
-  const handleChange = ({ value, name}: ILocale) => {
+  const handleChange = ({ value }: ILocale) => {
     const replace = pathname.replace(/^\/(en|pt)\//, '/')
+
+    if (['/en', '/pt'].includes(pathname)) {
+      router.push(`/${value}`)
+      return
+    }
     router.push(`/${value}${replace}`)
   }
 
